@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --void: #070a0f;
+    --panel: #0c1118;
+    --line: #1b2531;
+    --ink: #e7eef5;
+    --ink-2: #9fb0c0;
+    --ink-3: #5d6f80;
+    --signal: #3dd7c9;
+    --away: #ff7a59;
+    --select: #c77dff;
+    --warn: #ffd166;
+    --good: #7ee787;
+    --bad: #ff6b6b;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-void text-ink font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 20% -10%, rgba(61, 215, 201, 0.05), transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%, rgba(199, 125, 255, 0.04), transparent 55%);
+  }
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-line rounded;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-line-2;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  /* Range input: telemetry slider */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    @apply bg-line-2 rounded-full;
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 9999px;
+    @apply bg-signal;
+    box-shadow: 0 0 0 3px rgba(61, 215, 201, 0.18);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border: none;
+    border-radius: 9999px;
+    background: #3dd7c9;
+    box-shadow: 0 0 0 3px rgba(61, 215, 201, 0.18);
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-line rounded-lg shadow-inset;
+  }
+  .panel-head {
+    @apply flex items-center gap-2 px-3 py-2 border-b border-line text-2xs uppercase tracking-widest text-ink-3 font-mono;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-2xs font-mono border;
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+  .focus-ring:focus-visible {
+    @apply outline-none ring-2 ring-signal/60 ring-offset-1 ring-offset-void;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
