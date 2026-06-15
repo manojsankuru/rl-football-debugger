@@ -1,4 +1,4 @@
-# MADE · RL Football Agent Debugger
+# RL Football Agent Debugger
 
 An interactive, browser-based debugger for visually inspecting how a
 reinforcement-learning agent perceives and acts in a
