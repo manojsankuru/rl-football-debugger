@@ -31,9 +31,8 @@ export default function TopBar({ sim }: { sim: Simulation }) {
     <header className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-line bg-panel/80 px-4 py-2.5 backdrop-blur">
       <div className="flex items-baseline gap-2">
         <span className="text-[13px] font-semibold tracking-tight text-ink">
-          MADE
+          RL Football Debugger
         </span>
-        <span className="text-[11px] text-ink-3">RL Football Debugger</span>
       </div>
 
       <div className="flex items-center gap-2">
